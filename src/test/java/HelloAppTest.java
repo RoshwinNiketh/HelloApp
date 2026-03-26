@@ -1,29 +1,37 @@
 /**
- * HelloApp.java - A simple Java application that Displays "Hello, World!" to
- * the console.
+ * HelloApp.java - A Java application that personalizes a greeting using
+ * command-line arguments.
  *
- * This is the first step in the HelloApp journey, where we start with a basic
- * "Hello, World!" program. The application consists of a single class with a
- * main method that serves as the entry point for the program. The main method
- * uses the System.out.println() function to print the message "Hello, World!"
- * to the console. This application demonstrates fundamental Java concepts such
- * as class declaration, the main method, and standard output.
+ * This is the second step in the HelloApp journey (UC2). The application
+ * has been upgraded from a static message to accept a user's name passed 
+ * at runtime. It evaluates the command-line arguments array (args) and uses 
+ * conditional logic to print a personalized "Hello, [Name]!" message. If no 
+ * argument is provided, it safely defaults to the classic "Hello, World!".
  *
  * @author Developer Name
- * @version 1.0
+ * @version 2.0
  */
 
 /**
  * Key Java Concepts Used:
  * 1. Class Declaration - Defines a blueprint for objects
  * 2. Main Method - Entry point for program execution
- * 3. Static Keyword - Method belongs to the class, not instances
- * 4. String Argument Array - Command-line arguments parameter
- * 5. System.out.println() - Standard output stream for printing
+ * 3. String Argument Array - Command-line arguments parameter
+ * 4. Conditional Logic (if/else) - Decision making based on input
+ * 5. Array Indexing - Accessing specific data in an array (args[0])
+ * 6. String Concatenation - Combining text strings and variables
+ * 7. System.out.println() - Standard output stream for printing
  */
-
 public class HelloAppTest {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        // Check if at least one argument was provided by the user
+        if (args.length > 0) {
+            // Retrieve the first argument (the user's name)
+            String name = args[0];
+            System.out.println("Hello, " + name + "!");
+        } else {
+            // Fallback default message if no arguments are passed
+            System.out.println("Hello, World!");
+        }
     }
 }
